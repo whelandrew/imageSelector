@@ -1,6 +1,5 @@
-<div class="loading-overlay" *ngIf="loading">
-    <h1>LOADING</h1>
-</div>
+<div>
+<span us-spinner spinner-on="showSpinner"></span>
 
 <div style="text-align:center">
   <h1>
@@ -21,8 +20,12 @@
 	<div id="hoverImg" class="gallery" *ngFor="let image of images">
 		<a href={{image.image}} target="_blank" class="thumbnail">
 			<img class="img-responsive" src={{image.image}}/>
-			<h3 class="caption post-content"> {{image.name}} </h3>
+			<h3 class="caption post-content"> 
+				<label> {{image.pathName}} - {{image.name}}</label>
+				
+			</h3>
 		</a>
 	</div>
+</div>
 </div>
 

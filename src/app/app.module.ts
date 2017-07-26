@@ -1,25 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-    Router,
-    // import as RouterEvent to avoid confusion with the DOM Event
-    Event as RouterEvent,
-    NavigationStart,
-    NavigationEnd,
-    NavigationCancel,
-    NavigationError
-} from '@angular/router'
+import {HttpModule} from '@angular/http';
+
 
 import { AppComponent } from './app.component';
+import {WebApiPromiseService} from './app.service';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpModule
   ],
-  providers: [],
+  providers: [WebApiPromiseService],
+				
   bootstrap: [AppComponent]
 })
 export class AppModule { }
