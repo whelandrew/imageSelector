@@ -1,31 +1,39 @@
 <div>
 <span us-spinner spinner-on="showSpinner"></span>
 
-<div style="text-align:center">
-  <h1>
-    {{title}}
-  </h1>
-  <h2>
-	Select a Directory and get a random image 
-  </h2>
-</div>
-
-<input class="" type="file" id="Directory" name="files[]" (change)="getDirectory($event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple/>
-
-<button *ngIf="ready" button type="button" class="" (click)="refreshImages()">
-			<span>REFRESH</span>
-		</button>
-
-<div class="" *ngIf="ready">
-	<div id="hoverImg" class="gallery" *ngFor="let image of images">
-		<a href={{image.image}} target="_blank" class="thumbnail">
-			<img class="img-responsive" src={{image.image}}/>
-			<h3 class="caption post-content"> 
-				<label> {{image.pathName}} - {{image.name}}</label>
-				
-			</h3>
-		</a>
+	<div style="text-align:center">
+	  <h1>
+		{{title}}
+	  </h1>
+	  <h2>
+		Select a Directory and get a random image 
+	  </h2>
 	</div>
-</div>
+
+	<input class="" type="file" id="Directory" name="files[]" (change)="getDirectory($event)" webkitdirectory mozdirectory msdirectory odirectory directory multiple/>
+
+	<button *ngIf="ready" button type="button" class="" (click)="refreshImages()">
+				<span>REFRESH</span>
+			</button>
+
+	<div class="" *ngIf="ready">
+		<table>
+			<tr>
+				<td id="hoverImg" class="gallery" *ngFor="let image of images">	
+					<a href={{image.image}} target="iframe_a" class="thumbnail">
+						<img class="img-responsive" src={{image.image}}/>
+						<h3 class="caption post-content"> 
+							<label> {{image.pathName}} - {{image.name}}</label>			
+						</h3>
+					</a>		
+				</td>
+			</tr>
+		</table>
+		
+		<div>
+			<iframe frameborder=0 [src]="image.image" name="iframe_a" allowfullscreen></iframe>
+		</div>
+	</div>
+
 </div>
 

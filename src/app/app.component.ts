@@ -13,7 +13,8 @@ export class AppComponent implements OnInit{
 	ready: boolean = false;
 	loading: boolean = false;
 	previousCall;
-	imageURL: string = "https://www.dropbox.com/sh/yxetyp070bzh3ol/AACQIVLkZ2nYNHzIC6TOs_4ka?dl=0";
+	imageURL: string  = "https://www.dropbox.com";
+	
 	
 	directory = [];
 	images = [];
